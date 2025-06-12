@@ -37,16 +37,19 @@ public class GUI extends JFrame {
         menu.add(souhrn);
         frame.setJMenuBar(menuBar);
 
-// Inicializace ostatních komponent
-        textArea1 = new JTextArea();
-        checkBox1 = new JCheckBox("Je aktivní?");
-        table1 = new JTable(model);;
-        JScrollPane scrollPane = new JScrollPane(table1);
+    // Inicializace ostatních komponent
+            textArea1 = new JTextArea(30,20);
+            textArea1.setEditable(false);
+          textArea1.setText("Aktuální tým: " + PracovniTym.getNazev());
 
-// Přidání komponent do frame
-        frame.add(scrollPane, BorderLayout.CENTER);
-        frame.add(textArea1, BorderLayout.SOUTH);
-        frame.add(checkBox1, BorderLayout.NORTH);
+            checkBox1 = new JCheckBox("Je aktivní?");
+            table1 = new JTable(model);;
+            JScrollPane scrollPane = new JScrollPane(table1);
+
+            // Přidání komponent do frame// Přidání komponent do frame
+            frame.add(scrollPane, BorderLayout.SOUTH);
+            frame.add(textArea1, BorderLayout.CENTER);
+            frame.add(checkBox1, BorderLayout.NORTH);
 
         frame.setVisible(true);
 
